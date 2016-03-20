@@ -15,6 +15,10 @@
 		DB34F4211C9E3BA8008CF5C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB34F41F1C9E3BA8008CF5C6 /* LaunchScreen.storyboard */; };
 		DB34F42C1C9E3BA8008CF5C6 /* WebImageDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34F42B1C9E3BA8008CF5C6 /* WebImageDemoTests.m */; };
 		DB34F4371C9E3BA8008CF5C6 /* WebImageDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34F4361C9E3BA8008CF5C6 /* WebImageDemoUITests.m */; };
+		DB34F44A1C9E7908008CF5C6 /* YWebFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34F4491C9E7908008CF5C6 /* YWebFileManager.m */; };
+		DB34F44E1C9E89C7008CF5C6 /* UIImageView+YWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34F44D1C9E89C7008CF5C6 /* UIImageView+YWebImage.m */; };
+		DB34F4511C9E8B86008CF5C6 /* YWebDownManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34F4501C9E8B86008CF5C6 /* YWebDownManager.m */; };
+		DB34F4541C9EA328008CF5C6 /* YWebDataHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34F4531C9EA328008CF5C6 /* YWebDataHandle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,14 @@
 		DB34F4321C9E3BA8008CF5C6 /* WebImageDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebImageDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB34F4361C9E3BA8008CF5C6 /* WebImageDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebImageDemoUITests.m; sourceTree = "<group>"; };
 		DB34F4381C9E3BA8008CF5C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB34F4481C9E7908008CF5C6 /* YWebFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWebFileManager.h; sourceTree = "<group>"; };
+		DB34F4491C9E7908008CF5C6 /* YWebFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWebFileManager.m; sourceTree = "<group>"; };
+		DB34F44C1C9E89C7008CF5C6 /* UIImageView+YWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YWebImage.h"; sourceTree = "<group>"; };
+		DB34F44D1C9E89C7008CF5C6 /* UIImageView+YWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+YWebImage.m"; sourceTree = "<group>"; };
+		DB34F44F1C9E8B86008CF5C6 /* YWebDownManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWebDownManager.h; sourceTree = "<group>"; };
+		DB34F4501C9E8B86008CF5C6 /* YWebDownManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWebDownManager.m; sourceTree = "<group>"; };
+		DB34F4521C9EA328008CF5C6 /* YWebDataHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWebDataHandle.h; sourceTree = "<group>"; };
+		DB34F4531C9EA328008CF5C6 /* YWebDataHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWebDataHandle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,8 @@
 		DB34F4101C9E3BA8008CF5C6 /* WebImageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DB34F44B1C9E7A7E008CF5C6 /* YWebImage+UIKit */,
+				DB34F4441C9E3C15008CF5C6 /* YWebImage */,
 				DB34F4141C9E3BA8008CF5C6 /* AppDelegate.h */,
 				DB34F4151C9E3BA8008CF5C6 /* AppDelegate.m */,
 				DB34F4171C9E3BA8008CF5C6 /* ViewController.h */,
@@ -138,6 +152,28 @@
 				DB34F4381C9E3BA8008CF5C6 /* Info.plist */,
 			);
 			path = WebImageDemoUITests;
+			sourceTree = "<group>";
+		};
+		DB34F4441C9E3C15008CF5C6 /* YWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				DB34F4481C9E7908008CF5C6 /* YWebFileManager.h */,
+				DB34F4491C9E7908008CF5C6 /* YWebFileManager.m */,
+				DB34F44F1C9E8B86008CF5C6 /* YWebDownManager.h */,
+				DB34F4501C9E8B86008CF5C6 /* YWebDownManager.m */,
+				DB34F4521C9EA328008CF5C6 /* YWebDataHandle.h */,
+				DB34F4531C9EA328008CF5C6 /* YWebDataHandle.m */,
+			);
+			path = YWebImage;
+			sourceTree = "<group>";
+		};
+		DB34F44B1C9E7A7E008CF5C6 /* YWebImage+UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				DB34F44C1C9E89C7008CF5C6 /* UIImageView+YWebImage.h */,
+				DB34F44D1C9E89C7008CF5C6 /* UIImageView+YWebImage.m */,
+			);
+			path = "YWebImage+UIKit";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +238,7 @@
 		DB34F4061C9E3BA8008CF5C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = Y;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = YueWen;
 				TargetAttributes = {
@@ -272,7 +309,11 @@
 			files = (
 				DB34F4191C9E3BA8008CF5C6 /* ViewController.m in Sources */,
 				DB34F4161C9E3BA8008CF5C6 /* AppDelegate.m in Sources */,
+				DB34F4511C9E8B86008CF5C6 /* YWebDownManager.m in Sources */,
+				DB34F4541C9EA328008CF5C6 /* YWebDataHandle.m in Sources */,
+				DB34F44A1C9E7908008CF5C6 /* YWebFileManager.m in Sources */,
 				DB34F4131C9E3BA8008CF5C6 /* main.m in Sources */,
+				DB34F44E1C9E89C7008CF5C6 /* UIImageView+YWebImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
