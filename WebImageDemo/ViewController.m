@@ -15,10 +15,13 @@ static NSString * testImageURL1 = @"http://www.bz55.com/uploads/allimg/150417/13
 static NSString * testImageURL2 = @"http://a.hiphotos.baidu.com/zhidao/pic/item/faedab64034f78f0b7111ba67b310a55b3191c48.jpg";
 static NSString * testImageURL3 = @"http://c.hiphotos.baidu.com/zhidao/pic/item/730e0cf3d7ca7bcb48f80cb9bc096b63f724a8a1.jpg";
 
+
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UITextField *inputView;
 
 
 @end
@@ -30,7 +33,6 @@ static NSString * testImageURL3 = @"http://c.hiphotos.baidu.com/zhidao/pic/item/
     
     //初始化图片数据
     self.imageView.clipsToBounds = true;
-    self.imageView.backgroundColor = [UIColor clearColor];
     
     //初始化label
     self.label.text = @"100.0%";
@@ -45,8 +47,11 @@ static NSString * testImageURL3 = @"http://c.hiphotos.baidu.com/zhidao/pic/item/
 
 - (IBAction)startLoadImage:(id)sender
 {
+    
+    NSString * imageURL = self.inputView.text;
+    
     //可看进度的方法
-    [self.imageView yw_setImageWithUrl:testImageURL3 withProgressHandle:^(CGFloat didFinish, CGFloat didFinishTotal, CGFloat Total) {
+    [self.imageView yw_setImageWithUrl:imageURL withProgressHandle:^(CGFloat didFinish, CGFloat didFinishTotal, CGFloat Total) {
         
         //更改Label
         NSString * progress = [NSString stringWithFormat:@"%.1f%%",(didFinishTotal * 1.0 / Total) * 100.0];
