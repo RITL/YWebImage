@@ -23,7 +23,6 @@ static NSString * testImageURL3 = @"http://c.hiphotos.baidu.com/zhidao/pic/item/
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UITextField *inputView;
 
-
 @end
 
 @implementation ViewController
@@ -34,8 +33,11 @@ static NSString * testImageURL3 = @"http://c.hiphotos.baidu.com/zhidao/pic/item/
     //初始化图片数据
     self.imageView.clipsToBounds = true;
     
-    //初始化label
-    self.label.text = @"100.0%";
+
+    
+    
+    
+    NSLog(@"%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true) firstObject]);
     
 //    直接设置图片的方法
 //    [self.imageView yw_setImageWithUrl:testImageURL1];
@@ -47,6 +49,9 @@ static NSString * testImageURL3 = @"http://c.hiphotos.baidu.com/zhidao/pic/item/
 
 - (IBAction)startLoadImage:(id)sender
 {
+    
+    //默认初始化label为本地
+    self.label.text = @"本地图片！";
     
     NSString * imageURL = self.inputView.text;
     
