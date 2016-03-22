@@ -31,9 +31,10 @@ typedef void(^DownManagerProgressBlock)(CGFloat didFinish,CGFloat didFinishTotal
 
 NS_CLASS_AVAILABLE_IOS(7_0) @interface YWebDownManager : NSObject
 
-//开始下载图片
+//开始下载图片，如果存在文件，自动续点下载
 - (void)startDownImagePath:(NSString *)imagePath NS_AVAILABLE_IOS(7_0);
 - (void)startDownImageURL:(NSURL *)imageURL NS_AVAILABLE_IOS(7_0);
+
 
 
 //设置相关回调

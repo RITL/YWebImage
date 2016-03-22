@@ -21,17 +21,49 @@ typedef void(^DownManagerProgressBlock)(CGFloat didFinish,CGFloat didFinishTotal
 @interface UIImageView (YWebImage)
 
 
-//根据url设置图片
+
+/**
+ *  根据url设置网络图片
+ *
+ *  @param url 网络图片的url
+ */
 - (void)yw_setImageWithUrl:(NSString *)url;
 
+
+
+
+/**
+ *  根据url设置网络图片
+ *
+ *  @param url            网络图片的url
+ *  @param progresshandle 下载过程的回调
+ */
 - (void)yw_setImageWithUrl:(NSString *)url
         withProgressHandle:(DownManagerProgressBlock)progresshandle;
 
 
-//根据url设置图片，并支持默认占位图
+
+
+/**
+ *  根据url设置网络图片
+ *
+ *  @param url              网络图片的url
+ *  @param placeHodlerImage 下载未完成时的占位图
+ */
 - (void)yw_setImageWithUrl:(NSString *)url
           placeHolderImage:(UIImage *)placeHodlerImage;
 
+
+
+
+
+/**
+ *  根据url设置网络图片
+ *
+ *  @param url              网络图片的url
+ *  @param placeHodlerImage 下载未完成时的占位图
+ *  @param progresshandle   下载过程的回调
+ */
 - (void)yw_setImageWithUrl:(NSString *)url
           placeHolderImage:(UIImage *)placeHodlerImage
         withProgressHandle:(DownManagerProgressBlock)progresshandle;

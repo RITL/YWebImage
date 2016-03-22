@@ -7,50 +7,34 @@
 //
 
 #import "UIImageView+YWebImage.h"
-#import "YWebFileManager.h"
-#import "YWebDataHandle.h"
 #import "YWebDownManager.h"
+
 
 @implementation UIImageView (YWebImage)
 
 
+//根据url设置图片
 -(void)yw_setImageWithUrl:(NSString *)url
 {
-    [self yw_setImageWithUrl:url withProgressHandle:^(CGFloat didFinish, CGFloat didFinishTotal, CGFloat Total) {}];
+    [self yw_setImageWithUrl:url
+          withProgressHandle:^(CGFloat didFinish, CGFloat didFinishTotal, CGFloat Total) {}];
 }
 
-- (void)yw_setImageWithUrl:(NSString *)url placeHolderImage:(UIImage *)placeHodlerImage
+
+//根据url设置图片，并支持默认占位图
+- (void)yw_setImageWithUrl:(NSString *)url
+          placeHolderImage:(UIImage *)placeHodlerImage
 {
-    [self yw_setImageWithUrl:url placeHolderImage:placeHodlerImage withProgressHandle:^(CGFloat didFinish, CGFloat didFinishTotal, CGFloat Total) {}];
+    [self yw_setImageWithUrl:url
+            placeHolderImage:placeHodlerImage
+          withProgressHandle:^(CGFloat didFinish, CGFloat didFinishTotal, CGFloat Total) {}];
 }
 
 
--(void)yw_setImageWithUrl:(NSString *)url
-       withProgressHandle:(DownManagerProgressBlock)progresshandle
-{
-    //处理url
-    NSString * urlHandle = [YWebDataHandle imageNameForBase64Handle:url];
-    
-    //本地查询
-    if([[YWebFileManager shareInstanceType] fileIsExist:urlHandle])//如果本地存在返回图片
-    {
-        NSLog(@"本地已经存在这个图片了!");
-        
-        self.image = [[YWebFileManager shareInstanceType] imageWithURL:urlHandle];
-    }
-    
-    //不存在需要根据url下载
-    else
-    {
-        NSLog(@"本地没有这个图片!");
-        
-        //开始下载
-        [self downImage:url withProgressHandle:progresshandle];
-    }
-}
-
-
-- (void)yw_setImageWithUrl:(NSString *)url placeHolderImage:(UIImage *)placeHodlerImage withProgressHandle:(DownManagerProgressBlock)progresshandle
+//根据url设置图片，支持默认占位图并进行过程回调
+- (void)yw_setImageWithUrl:(NSString *)url
+          placeHolderImage:(UIImage *)placeHodlerImage
+        withProgressHandle:(DownManagerProgressBlock)progresshandle
 {
     //设置占位图
     self.image = placeHodlerImage;
@@ -60,13 +44,27 @@
 }
 
 
+//根据url设置图片并支持过程回调
+-(void)yw_setImageWithUrl:(NSString *)url
+       withProgressHandle:(DownManagerProgressBlock)progresshandle
+{
+    
+    //开始下载
+    [self downImage:url withProgressHandle:progresshandle];
+}
+
+
+
+#pragma mark - Start Down Picture
 //开始下载图片
 - (void)downImage:(NSString *)url
 {
     [self downImage:url withProgressHandle:^(CGFloat didFinish, CGFloat didFinishTotal, CGFloat Total) {}];
 }
 
-//开始下载图片
+
+
+//开始下载图片操作
 - (void)downImage:(NSString *)url
 withProgressHandle:(DownManagerProgressBlock)progresshandle
 {
