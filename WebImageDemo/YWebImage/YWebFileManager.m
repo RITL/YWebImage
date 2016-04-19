@@ -151,7 +151,7 @@
     //拼接路径
     NSString * path = [YWebDataHandle documentYWebImageFile];
     
-    return  [NSString stringWithFormat:@"%f",[self folderSizeAtPath:path]];
+    return  [NSString stringWithFormat:@"%.2f",[self folderSizeAtPath:path]];
 }
 
 
