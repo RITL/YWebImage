@@ -46,7 +46,7 @@ static NSString * testImageURL3 = @"http://c.hiphotos.baidu.com/zhidao/pic/item/
     
     NSString * imageURL = self.inputView.text;
     
-    //可看进度的方法
+    //可看进度的方法   
     [self.imageView yw_setImageWithUrl:imageURL withProgressHandle:^(CGFloat didFinish, CGFloat didFinishTotal, CGFloat Total) {
         
         //更改Label

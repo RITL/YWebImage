@@ -163,6 +163,9 @@ didFinishDownloadingToURL:(NSURL *)location
     //路径字符串
     NSString * path = [YWebDataHandle documentYWebImageFileAppendFile:self.imageName];
     
+    //创建相关文件夹
+    [[YWebFileManager shareInstance] createDownFile];
+    
     //获取创建下载到的路径url
     NSURL * url = [NSURL fileURLWithPath:path];
     

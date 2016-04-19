@@ -31,6 +31,8 @@
         //初始化单例对象
         yWebFileManager = [[YWebFileManager alloc]init];
         
+        
+        
     });
     
     return yWebFileManager;
@@ -115,6 +117,24 @@
     completeBlockHandle();
     
     return true;
+}
+
+
+//创建下载的文件夹
+-(BOOL)createDownFile
+{
+    //获得存储位置的路径字符串
+    NSString * path = [YWebDataHandle documentYWebImageFile];
+    
+    //如果存在
+    if ([self folderIsExist:path])
+    {
+        return true;
+    }
+    
+    //创建文件夹
+    return [self.fileManager createDirectoryAtPath:path withIntermediateDirectories:true attributes:nil error:nil];
+    
 }
 
 

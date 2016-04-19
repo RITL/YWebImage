@@ -59,6 +59,15 @@ NS_CLASS_AVAILABLE_IOS(7_0) @interface YWebFileManager : NSObject
 
 
 
+
+/**
+ *  创建下载缓存的文件夹
+ *
+ *  @return true表示创建成功，false表示创建失败
+ */
+- (BOOL)createDownFile NS_AVAILABLE_IOS(7_0);
+
+
 /**
  *  根据url获取存在本地的图片
  *
